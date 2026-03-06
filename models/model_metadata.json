@@ -1,0 +1,40 @@
+{
+  "regression": {
+    "features": [
+      "cpi_all_urban_consumers",
+      "gt_neg_alternative_yoy_diff",
+      "gt_neg_not_working",
+      "gt_pos_free_trial_yoy_diff",
+      "real_disposable_personal_income_yoy_diff",
+      "reddit_post_count",
+      "gt_pos_premium"
+    ],
+    "target": "Subscribers_Millions_yoy_growth_rate",
+    "metrics": {
+      "r2": 0.5574,
+      "rmse": 0.0775,
+      "mae": 0.0649
+    },
+    "description": "OLS Linear Regression predicting YoY subscriber growth rate"
+  },
+  "classification": {
+    "features": [
+      "consumer_sentiment_yoy_diff",
+      "cpi_yoy",
+      "gt_pos_free_trial_yoy_diff",
+      "gt_pos_premium_yoy_diff",
+      "gt_pos_sign_up_yoy_diff"
+    ],
+    "target": "YoY_Growth_Rate_Declining",
+    "metrics": {
+      "accuracy": 0.75,
+      "f1": 0.7714,
+      "auc": 0.7688
+    },
+    "hyperparameters": {
+      "C": 10.0,
+      "class_weight": "balanced"
+    },
+    "description": "Logistic Regression predicting whether YoY growth rate is declining"
+  }
+}
